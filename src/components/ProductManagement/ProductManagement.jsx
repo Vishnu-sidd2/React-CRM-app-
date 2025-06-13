@@ -33,7 +33,7 @@ const ProductManagement = () => {
     if (searchTerm) {
       const lowerCaseSearchTerm = searchTerm.toLowerCase(); // Optimize: convert search term once
       filtered = filtered.filter(product => {
-        // Ensure product, its title, and brand exist and are strings before calling toLowerCase()
+        
         const titleExists = product && typeof product.title === 'string';
         const brandExists = product && typeof product.brand === 'string';
 
@@ -78,7 +78,7 @@ const ProductManagement = () => {
     setEditingProduct(null)
   }
 
-  // Ensure products array is not empty before mapping categories
+  //  products array is not empty before mapping categories
   const categories = products.length > 0 ? [...new Set(products.map(p => p.category))] : [];
 
   if (loading && products.length === 0) {
@@ -142,14 +142,7 @@ const ProductManagement = () => {
             onDelete={handleDeleteProduct}
           />
         ) : (
-          // Assuming you have a ProductList component for 'list' view
-          // If not, you might need to create one or adjust your rendering
-          // <ProductList
-          //   products={filteredProducts}
-          //   onEdit={handleEditProduct}
-          //   onDelete={handleDeleteProduct}
-          // />
-          <p>List view coming soon or not implemented yet.</p> // Placeholder if no ProductList
+          <p>List view coming soon or not implemented yet.</p> 
         )}
       </div>
 

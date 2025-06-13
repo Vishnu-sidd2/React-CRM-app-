@@ -11,7 +11,7 @@ const Login = () => {
     password: ''
   })
   const [showPassword, setShowPassword] = useState(false)
-  
+
   const dispatch = useDispatch()
   const { loading, error } = useSelector((state) => state.auth)
 
@@ -35,7 +35,7 @@ const Login = () => {
       toast.error('Please fill in all fields')
       return
     }
-    
+
     const result = await dispatch(loginUser(credentials))
     if (result.type === 'auth/loginUser/fulfilled') {
       toast.success('Login successful!')
@@ -52,6 +52,7 @@ const Login = () => {
   return (
     <div className="login-container">
       <div className="login-background">
+        <div className="half-moon" />
         <div className="login-card">
           <div className="login-header">
             <h1>Welcome Back</h1>
@@ -62,6 +63,7 @@ const Login = () => {
             <div className="form-group">
               <label htmlFor="username">Username</label>
               <div className="input-wrapper">
+               
                 <input
                   type="text"
                   id="username"
@@ -77,7 +79,7 @@ const Login = () => {
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <div className="input-wrapper">
-               
+                
                 <input
                   type={showPassword ? 'text' : 'password'}
                   id="password"
@@ -97,8 +99,8 @@ const Login = () => {
               </div>
             </div>
 
-            <button 
-              type="submit" 
+            <button
+              type="submit"
               className="login-button"
               disabled={loading}
             >

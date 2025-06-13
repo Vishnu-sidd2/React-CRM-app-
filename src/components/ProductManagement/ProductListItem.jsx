@@ -1,4 +1,4 @@
-import { FiEdit, FiTrash2 } from 'react-icons/fi'
+//import { FiEdit, FiTrash2 } from 'react-icons/fi'
 import './ProductListItem.css'
 
 const ProductListItem = ({ product, onEdit, onDelete }) => {
